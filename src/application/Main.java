@@ -8,20 +8,22 @@ public class Main {
 
     public static void main(String[] args) {
        final String GREETING_MESSAGE = "Bienvenid@";
+        showMessage(GREETING_MESSAGE);
+        showMessage("-------------------------------");
 
 
+       String [] studentNames = {"JUAN","VERONICA","LUISA","SAMUEL", "GABRIELA"};
 
-       String [] STUDENT_NAME = {"JUAN","VERONICA","LUISA","SAMUEL", "GABRIELA"};
-       int [] BIRTHYEAR = {2000,1989,1995,2010,2018};
+       int [] birthYears = {2000,1989,1995,2010,2018};
 
        //lista edades
-        List <Integer> agelist = new ArrayList<>();
-        for (int i = 0; i < STUDENT_NAME.length; i++) {
-            showMessage(STUDENT_NAME) + "TIME" + agelist.get(i) + "años")
+        List <Integer> agelist = getAgelist(birthYears);
+
+        for (int i = 0; i < studentNames.length; i++) {
+            showMessage(studentNames[i] + " tiene " + agelist.get(i) + " años ");
         }
 
-       showMessage(GREETING_MESSAGE);
-       showMessage("-------------------------------");
+
 
 
 
@@ -36,14 +38,15 @@ public class Main {
         System.out.println(message);
     }
     //CREAR METODO PARA CALCULAR LA EDAD
-    public static int CALCULATE_AGE (int BIRTHYEAR){
-        return BIRTHYEAR;
+    public static int CALCULATE_AGE (int birthYear
+    ){
+        return CURRENT_YEAR - birthYear;
     }
     //CREAR METODO PARA LLEVAR ARREGLO
-    public static List<Integer> getAgelist (int[] ){
+    public static List<Integer> getAgelist (int[] birthYears ){
         List<Integer> ages = new ArrayList<>();
-        for (int BIRTHYEAR : BIRTHYEAR){
-            ages.add(getAgelist(BIRTHYEAR));
+        for (int birthYear : birthYears){
+            ages.add(CALCULATE_AGE(birthYear));
 
 
         }
